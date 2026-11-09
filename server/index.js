@@ -25,8 +25,8 @@ app.use(express.json());  // Permite que tu servidor entienda los datos en forma
 const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/chiapas_puede';
 
 mongoose.connect(mongoURI)
-  .then(() => console.log('🟢 ¡Conectado con éxito a MongoDB!'))
-  .catch((error) => console.error('🔴 Error crítico al conectar a MongoDB:', error));
+  .then(() => console.log(' ¡Conectado con éxito a MongoDB!'))
+  .catch((error) => console.error(' Error crítico al conectar a MongoDB:', error));
 
 // 4. Declaración de Rutas de la API
 // Esto hará que todas tus rutas de publicaciones comiencen con /api (Ej: http://localhost:5000/api/publicaciones)
@@ -34,12 +34,12 @@ app.use('/api', rutasPublicaciones);
 
 // Ruta de prueba inicial para verificar en el navegador que el servidor responda
 app.get('/', (req, res) => {
-  res.send('🚀 Servidor de Chiapas Puede corriendo exitosamente.');
+  res.send(' Servidor de Chiapas Puede corriendo exitosamente.');
 });
 
 // 5. Encendido oficial del Servidor
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor backend escuchando en el puerto: http://localhost:${PORT}`);
+  console.log(` Servidor backend escuchando en el puerto: http://localhost:${PORT}`);
 });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
